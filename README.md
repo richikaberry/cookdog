@@ -1,4 +1,4 @@
-# Remixで作成したポートフォリオ
+# Remixで作成したWebアプリケーション
 
 ### 使用技術
   - TypeScript
