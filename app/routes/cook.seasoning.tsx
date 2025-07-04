@@ -1,7 +1,7 @@
 export default function seasoning() {
   return (
     <div>
-      <label>seasoning</label>
+      <label className="text-[#dc143c] mx-10">seasoning</label>
     </div>
   )
 }
