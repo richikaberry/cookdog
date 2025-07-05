@@ -48,7 +48,7 @@ export async function action({ request }: ActionFunctionArgs) {
 export default function Top() {
   const actionData = useActionData<typeof action>();
   return (
-    <div>
+    <div className="flex flex-col items-center bg-gray-700" >
       <label>Cook Dogへようこそ</label>
       <AuthForm
         email={actionData?.errors?.email || ""}
