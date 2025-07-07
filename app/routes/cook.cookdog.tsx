@@ -22,7 +22,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export default function CookDog() {
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <label>Cook Dogへようこそ</label>
       <div>
         <label>最初は食材を入力してください</label>
