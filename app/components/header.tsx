@@ -17,23 +17,25 @@ export function Header() {
   const matches = useMatches();
 
   return (
-    <header>
-      <div>
-        <a href='/top/page' >Cook Dog</a>
+    <header className="bg-gray-700 border-y-2 text-center">
+      <div className="grid grid-cols-2">
+        <div>
+          <a href='/top/page' >Cook Dog</a>
+        </div>
+        <nav className="w-1/2">
+          <ul className="flex gap-10">
+            {menuHeaders.map(({ to, label }) => {
+              if (matches[1].pathname !== to) {
+                return (
+                  <React.Fragment key={label}>
+                    <Link to={to}>{label}</Link>
+                  </React.Fragment>
+                )
+              }
+            })}
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul>
-          {menuHeaders.map(({ to, label }) => {
-            if (matches[1].pathname !== to) {
-              return (
-                <React.Fragment key={label}>
-                  <Link to={to}>{label}</Link>
-                </React.Fragment>
-              )
-            }
-          })}
-        </ul>
-      </nav>
     </header>
   )
 }
