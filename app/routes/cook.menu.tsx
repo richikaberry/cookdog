@@ -1,3 +1,5 @@
+import { Header } from "~/components/header"
+
 export const arrayCookMenuList = [
   {
     id: 1,
@@ -78,40 +80,45 @@ export const arrayCookMenuList = [
 
 export default function Menu() {
   return (
-    <div>
-      <label>メニューを以下からお選びください</label>
+    <div className="text-center bg-gray-700">
+      <Header />
+      <div className="p-10">以下のメニューからお選びください</div>
+      <div className="flex flex-col items-center bg-white text-black">
+      {arrayCookMenuList.map(item => (
       <div>
-        <label>メニュー</label>
-        <div>
-          <ul>
-            {arrayCookMenuList.map(item => (
-              <div>
-              <li key={item.id} >
-                <img src={item.image} alt={item.name} />
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-              </li>
-              <div>
-                <h4>レシピ</h4>
-                <p>調理時間: {item.recipe.cookingTime}</p>
-                <p>分量: {item.recipe.servingSize}</p>
-                <h5>材料:</h5>
-                <ul>
-                  {item.recipe.ingredients.map((ingredient, index) => (
-                    <li key={index} >{ingredient}</li>
-                  ))}
-                </ul>
-                <h5>手順:</h5>
-                <ol>
-                  {item.recipe.steps.map((step, index) => (
-                    <li key={index} >{step}</li>
-                  ))}
-                </ol>
-              </div>
+        <label>CookDog Menu<span>{item.id}</span></label>
+        <ul className="max-w-lg">
+          <h2>{item.name}</h2>
+          <div>
+            <li key={item.id} >
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full object-cover"
+              />
+              <p>{item.description}</p>
+            </li>
+            <div className="mt-4">
+              <h3>レシピ</h3>
+              <p>調理時間: {item.recipe.cookingTime}</p>
+              <p>分量: {item.recipe.servingSize}</p>
+              <h5>材料:</h5>
+              <ul className="grid grid-cols-3 gap-1.5">
+                {item.recipe.ingredients.map((ingredient, index) => (
+                  <li key={index} >{ingredient}</li>
+                ))}
+              </ul>
+              <h4>手順:</h4>
+              <ol className="flex flex-col gap-2.5 text-left">
+                {item.recipe.steps.map((step, index) => (
+                  <li key={index} ><span>{index + 1}.</span>{step}</li>
+                ))}
+              </ol>
             </div>
-            ))}
-          </ul>
-        </div>
+          </div>
+        </ul>
+      </div>
+      ))}
       </div>
     </div>
   )
