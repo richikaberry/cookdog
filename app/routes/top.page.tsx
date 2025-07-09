@@ -8,7 +8,7 @@ const menuItems = [
     label: "Cook Dog"
   },
   {
-    to: url(`cook/menu`),
+    to: url(`cook/list`),
     label: "Cooking Menu"
   },
 ];
