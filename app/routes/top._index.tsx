@@ -12,7 +12,7 @@ const getUserData = [
   }
 ]
 
-export async function action({ request }: ActionFunctionArgs) {
+export const action = async ({ request }: ActionFunctionArgs) => {
   const formData: FormData = await request.formData();
   const formEmail = formData.get("email");
   const checkEmail: string | null = formEmail === null ? null : String(formEmail);
