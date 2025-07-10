@@ -110,11 +110,11 @@ export default function Menu() {
       {arrayCookMenuList.map(item => (
         item.id === id ?
           <div className="my-10">
-            <label className="text-xl">CookDog Menu<span>{item.id}</span></label>
+            <div className="p-2.5"><label className="text-xl font-semibold">CookDog Menu<span className="mx-1.5">{item.id}</span></label></div>
             <ul className="max-w-lg">
-              <h2>{item.name}</h2>
-              <div>
-                <li key={item.id} >
+              <h2 className="text-2xl text-blue-400 font-bold shadow-md p-2">{item.name}</h2>
+              <div className="p-4">
+                <li key={item.id} className="flex flex-col gap-2.5" >
                   <img
                     src={item.image}
                     alt={item.name}
@@ -122,17 +122,17 @@ export default function Menu() {
                   />
                   <p>{item.description}</p>
                 </li>
-                <div className="mt-4">
-                  <h3>レシピ</h3>
+                <div className="flex flex-col gap-3.5 mt-4">
+                  <h3 className="text-lg font-bold">レシピ</h3>
                   <p>調理時間: {item.recipe.cookingTime}</p>
                   <p>分量: {item.recipe.servingSize}</p>
                   <h5>材料:</h5>
-                  <ul className="grid grid-cols-3 gap-1.5">
+                  <ul className="grid grid-cols-3 gap-1.5 shadow-2xl">
                     {item.recipe.ingredients.map((ingredient, index) => (
-                      <li key={index} >{ingredient}</li>
+                      <li key={index} className="p-2" >{ingredient}</li>
                     ))}
                   </ul>
-                  <h4>手順:</h4>
+                  <h4 className="text-xl font-bold">手順:</h4>
                   <ol className="flex flex-col gap-2.5 text-left">
                     {item.recipe.steps.map((step, index) => (
                       <li key={index} ><span>{index + 1}.</span>{step}</li>
