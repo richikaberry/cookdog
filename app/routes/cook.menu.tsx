@@ -135,7 +135,7 @@ export default function Menu() {
                   <h4 className="text-xl font-bold">手順:</h4>
                   <ol className="flex flex-col gap-2.5 text-left">
                     {item.recipe.steps.map((step, index) => (
-                      <li key={index} ><span>{index + 1}.</span>{step}</li>
+                      <li key={index} ><span className="w-full text-blue-700 text-sm bg-blue-200 rounded-full border border-blue-700 px-2 py-1 mr-2">{index + 1}</span>{step}</li>
                     ))}
                   </ol>
                 </div>
