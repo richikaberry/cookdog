@@ -27,7 +27,7 @@ export default function CookDog() {
       <Header />
       <div className="flex flex-col justify-center items-center gap-4">
         <label className="text-xl font-bold">Cook Dogへようこそ</label>
-        <div>
+        <div className="bg-gray-100 rounded shadow-lg w-full max-w-md p-10">
           <Form method="get" action="/cook/seasoning">
             <DynamicInput
               title="Cook Dogに必要な材料を入力してください"
