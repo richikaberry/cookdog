@@ -126,7 +126,7 @@ export default function Menu() {
                   <h3 className="text-lg font-bold">レシピ</h3>
                   <p>調理時間: {item.recipe.cookingTime}</p>
                   <p>分量: {item.recipe.servingSize}</p>
-                  <h5>材料:</h5>
+                  <h5>材料</h5>
                   <ul className="grid grid-cols-3 gap-1.5 shadow-2xl">
                     {item.recipe.ingredients.map((ingredient, index) => (
                       <li key={index} className="p-2" >{ingredient}</li>
