@@ -24,7 +24,7 @@ export function DynamicInput({ title, namePrefix = 'input' }: DynamicInputProps)
 
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-black border border-blue-600 p-2 shadow-2xl">{title}</label>
+      <label className="text-black border-2 rounded-md border-blue-600 p-2 shadow-2xl mb-10">{title}</label>
       {inputs.map((input, index) => (
         <div key={index} className="flex gap-2.5 text-black text-lg">
           <input
